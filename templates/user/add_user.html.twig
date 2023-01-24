@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}Changer identifiants {% endblock %}
+{% block body %}
+    <h1 id="titre-principal">Modifier les informations d'identification</h1>
+    {{ form_start(form) }}
+    <div class="formItem">
+        {{ form(form.email) }}
+    </div>
+    <div class="formItem">
+        {{ form(form.password) }}
+    </div>
+    <div class="formItem">
+        {{ form_rest(form) }}
+    </div>
+{% endblock %}

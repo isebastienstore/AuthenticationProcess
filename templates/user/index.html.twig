@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}user list{% endblock %}
+
+{% block body %}
+    <div id="corps">
+        <p style="text-align: center"> <a href="http://localhost:8000/logout">Deconnexion</a> </p>
+        <h1 id="titre-principal">LISTE DES UTILIISATEURS</h1>
+
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                </tr>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{user.email }}</td>
+                    <td>{% for role in user.roles%} {{ role }},{% endfor %}</td>
+
+                </tr>
+                {% endfor %}
+            </table>
+    </div>
+{% endblock %}
